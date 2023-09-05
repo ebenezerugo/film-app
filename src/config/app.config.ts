@@ -50,6 +50,14 @@ class EnvironmentVariablesValidator {
   @IsOptional()
   APP_PORT: number;
 
+  @IsString()
+  @IsOptional()
+  APP_DESCRIPTION: string;
+
+  @IsString()
+  @IsOptional()
+  APP_VERSION: string;
+
   @IsInt()
   @Min(0)
   @Max(65535)
@@ -87,6 +95,8 @@ export default registerAs<AppConfig>('app', () => {
   return {
     nodeEnv: process.env.NODE_ENV || Environment.DEVELOPMENT,
     name: process.env.APP_NAME || 'app',
+    description: process.env.APP_DESCRIPTION || 'app',
+    version: process.env.APP_VERSION || '1.0',
     port: process.env.APP_PORT
       ? parseInt(process.env.APP_PORT, 10)
       : process.env.PORT

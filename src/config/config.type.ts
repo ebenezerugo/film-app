@@ -1,6 +1,8 @@
 export type AppConfig = {
   nodeEnv: string;
   name: string;
+  description: string;
+  version: string;
   port: number;
   key: string;
   workingDirectory: string;
