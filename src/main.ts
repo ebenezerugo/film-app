@@ -32,8 +32,6 @@ async function bootstrap() {
     .setTitle(configService.get('app.name', { infer: true }))
     .setDescription(configService.get('app.description', { infer: true }))
     .setVersion(configService.get('app.version', { infer: true }))
-    .addBasicAuth()
-    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
