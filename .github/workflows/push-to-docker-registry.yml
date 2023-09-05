@@ -32,4 +32,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: film-app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/film-app:latest
