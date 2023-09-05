@@ -6,10 +6,10 @@ services:
 #      target: development
 #    volumes:
 #      - .:/usr/src/app
+    image: ebenezerugo/film-app
     env_file:
       - .env
-#    command: npm run start:dev
-    image: ebenezerugo/film-app
+    command: run migration:run
     ports:
       - '3000:3000'
     depends_on:
