@@ -87,6 +87,10 @@ class EnvironmentVariablesValidator {
   @IsString()
   @IsOptional()
   APP_HEADER_LANGUAGE: string;
+
+  @IsString()
+  @IsOptional()
+  STORAGE_PATH: string;
 }
 
 export default registerAs<AppConfig>('app', () => {
@@ -104,9 +108,10 @@ export default registerAs<AppConfig>('app', () => {
       : 3000,
     key: process.env.APP_KEY || '',
     workingDirectory: process.env.WORKING_DIRECTORY || process.cwd(),
-    domain: process.env.APP_DOMAIN || 'https://www.film.com/',
+    domain: process.env.APP_DOMAIN || 'http://localhost',
     apiPrefix: process.env.API_PREFIX || 'api',
     fallbackLanguage: process.env.APP_FALLBACK_LANGUAGE || 'en',
     headerLanguage: process.env.APP_HEADER_LANGUAGE || 'x-custom-lang',
+    storagePath: process.env.STORAGE_PATH || '/',
   };
 });

@@ -7,6 +7,8 @@ import {
   MemoryHealthIndicator,
   TypeOrmHealthIndicator,
 } from '@nestjs/terminus';
+import { AllConfigType } from '../config/config.type';
+import { ConfigService } from '@nestjs/config';
 
 @Controller('health')
 export class HealthController {
@@ -15,6 +17,7 @@ export class HealthController {
     private typeOrmHealthIndicator: TypeOrmHealthIndicator,
     private memoryHealthIndicator: MemoryHealthIndicator,
     private diskHealthIndicator: DiskHealthIndicator,
+    private configService: ConfigService<AllConfigType>,
   ) {}
 
   @Get()
@@ -32,7 +35,7 @@ export class HealthController {
       () =>
         this.diskHealthIndicator.checkStorage('disk health', {
           thresholdPercent: 0.5,
-          path: 'c:/',
+          path: this.configService.get('app.storagePath', { infer: true }),
         }),
     ]);
   }

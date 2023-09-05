@@ -10,6 +10,7 @@ export type AppConfig = {
   apiPrefix: string;
   fallbackLanguage: string;
   headerLanguage: string;
+  storagePath: string;
 };
 
 export type DatabaseConfig = {
