@@ -4,7 +4,7 @@ import { Film } from './film.entity';
 
 @Entity()
 export class Comment extends Model {
-  @Column({ type: String })
+  @Column({ type: String, length: 400 })
   content: string;
 
   @ManyToOne(() => Film, (film) => film.comments)

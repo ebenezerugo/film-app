@@ -18,7 +18,7 @@ async function bootstrap() {
 
   app.enableShutdownHooks();
   app.setGlobalPrefix(configService.get('app.apiPrefix', { infer: true }), {
-    exclude: ['/'],
+    exclude: ['/', '/health'],
   });
 
   app.enableVersioning({

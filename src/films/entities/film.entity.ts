@@ -12,4 +12,6 @@ export class Film extends Model {
 
   @OneToMany(() => Comment, (comment) => comment.film)
   comments: Comment[];
+
+  numberOfComments: number;
 }
