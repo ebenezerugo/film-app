@@ -11,6 +11,7 @@ import * as path from 'path';
 import { I18nModule } from 'nestjs-i18n/dist/i18n.module';
 import { HeaderResolver } from 'nestjs-i18n';
 import { AllConfigType } from './config/config.type';
+import { FilmsModule } from './films/films.module';
 
 @Module({
   imports: [
@@ -44,6 +45,7 @@ import { AllConfigType } from './config/config.type';
       imports: [ConfigModule],
       inject: [ConfigService],
     }),
+    FilmsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
