@@ -104,7 +104,7 @@ export default registerAs<AppConfig>('app', () => {
       : 3000,
     key: process.env.APP_KEY || '',
     workingDirectory: process.env.WORKING_DIRECTORY || process.cwd(),
-    domain: process.env.APP_DOMAIN || 'http://localhost',
+    domain: process.env.APP_DOMAIN || 'https://www.film.com/',
     apiPrefix: process.env.API_PREFIX || 'api',
     fallbackLanguage: process.env.APP_FALLBACK_LANGUAGE || 'en',
     headerLanguage: process.env.APP_HEADER_LANGUAGE || 'x-custom-lang',
