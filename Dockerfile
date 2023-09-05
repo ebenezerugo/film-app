@@ -45,8 +45,6 @@ COPY ./startup.dev.sh /opt/startup.dev.sh
 RUN sed -i 's/\r//g' /opt/wait-for-it.sh
 RUN sed -i 's/\r//g' /opt/startup.dev.sh
 
-RUN npm run build
-
 USER node
 
 ###################
