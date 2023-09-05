@@ -49,5 +49,8 @@ jobs:
           passphrase: ${{ secrets.DROPLET_SSH_KEY_PASSPHRASE }}
 
           script: |
+            cd film-app
+            git pull
+            npm run migration:run
             docker-compose pull
             docker-compose up -d
